@@ -1,26 +1,49 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "./build/",
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
     "allowJs": true,
-    "skipLibCheck": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "checkJs": false,
+
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+
+    "paths": {
+      "@/*": ["*"],
+      "Components/*": ["src/components/*"],
+      "Lib/*": ["src/lib/*"],
+      "Models/*": ["src/models/*"],
+      "Routes/*": ["src/routes/*"],
+      "Services/*": ["src/services/*"],
+      "UI/*": ["src/ui/*"],
+      "Views/*": ["src/views/*"]
+    }
   },
+  "exclude": [
+    "./node_modules",
+    "./public",
+    "./build",
+    "./webpack.config.js"
+  ],
   "include": [
-    "src"
+    "src/lib/*",
+    "src/ui/*",
+    "src/store/*",
+    "src/*",
+    "src/@types/*"
   ]
 }
