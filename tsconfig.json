@@ -40,10 +40,6 @@
     "./webpack.config.js"
   ],
   "include": [
-    "src/lib/*",
-    "src/ui/*",
-    "src/store/*",
-    "src/*",
-    "src/@types/*"
+    "src"
   ]
 }

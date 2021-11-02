@@ -7,7 +7,7 @@ module.exports = (env) => {
   console.log('NODE_ENV: ', env.NODE_ENV);
   return {
     context: __dirname,
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     output: {
       path: path.resolve( __dirname, 'build/', env.NODE_ENV ),
       filename: 'main.js',
