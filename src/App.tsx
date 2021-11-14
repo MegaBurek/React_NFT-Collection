@@ -1,32 +1,32 @@
 import React, { FunctionComponent } from "react";
-import { Router, Route, Switch } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from "react-router-dom";
 
 //Custom components
+import ThemeProvider from "Components/ThemeContext/ThemeProvider";
 import MainPage from "UI/MainPage";
 
-//Routes
-import publicRoutes from "Routes/public";
-
 //Types
-import { RouteType } from "@/@types/common";
-
-var history = createBrowserHistory();
-
+import NFTPage from "@/Views/NFTPage";
+import NFTDetailPage from "@/Views/NFTDetailPage";
 
 const App: FunctionComponent<any> = (props) => {
 
-  return (
-      <Router history={history}>
-        <MainPage>
-          <Switch>
-            {publicRoutes.map((route: RouteType, key: number) => (
-                <Route path={route.path} key={key} component={route.component} />
-            ))}
-          </Switch>
-        </MainPage>
-      </Router>
-  );
+    return (
+        <ThemeProvider>
+            <BrowserRouter>
+                <MainPage>
+                    <Routes>
+                        <Route path={"/"} element={<NFTPage/>}/>
+                        <Route path={"/nft/:id"} element={<NFTDetailPage/>}/>
+                    </Routes>
+                </MainPage>
+            </BrowserRouter>
+        </ThemeProvider>
+    );
 };
 
 export default App;

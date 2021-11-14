@@ -1,0 +1,28 @@
+@use './variables';
+
+@mixin hover-effect {
+  -webkit-box-shadow: 3px 5px 15px #04d3;
+  box-shadow: 3px 5px 15px #04d3;
+}
+
+@mixin text-align-center {
+  text-align: center!important;
+}
+
+@mixin info-box {
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
+  padding: 25px 30px;
+  text-align: left;
+  border-radius: variables.$rounded;
+}
+
+@mixin feint-border-bottom {
+  border-bottom: 3px solid #ddd;
+}
+
+@mixin align-center {
+  align-items: center;
+}

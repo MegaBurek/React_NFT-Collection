@@ -1,12 +1,12 @@
 //Custom components
-import TestPage from "Views/TestPage";
+import NFTPage from "@/Views/NFTPage";
 
 //Types
 import { RouteType } from "@/@types/common";
 
-
 const publicRoutes: RouteType[] = [
-  { path: "/", name: "Posts Page", component: TestPage }
+  { path: "/test", name: "Test Page", component: NFTPage },
+  { path: "/", name: "Tests Page", component: NFTPage, index: true }
 ];
 
 export default publicRoutes;

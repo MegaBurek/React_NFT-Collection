@@ -38,6 +38,14 @@ module.exports = (env) => {
           use: ['style-loader', 'css-loader'],
         },
         {
+          test: /\.scss$/i,
+          use: [
+            "style-loader",
+            "css-loader",
+            "sass-loader",
+          ],
+        },
+        {
           test: /\.(png|jpg|svg|gif|docx)$/,
           use: 'file-loader'
         }
@@ -63,13 +71,15 @@ module.exports = (env) => {
       alias: {
         '@': path.resolve(__dirname, "src"),
         Components: path.resolve(__dirname, "src/components/"),
+        Styles: path.resolve(__dirname, "src/styles/"),
         Images: path.resolve(__dirname, "src/images"),
         Lib: path.resolve(__dirname, "src/lib"),
         Models: path.resolve(__dirname, "src/models/"),
         Routes: path.resolve(__dirname, "src/routes/"),
         Services: path.resolve(__dirname, "src/services/"),
         UI: path.resolve(__dirname, "src/ui"),
-        Views: path.resolve(__dirname, "src/views/")
+        Views: path.resolve(__dirname, "src/views/"),
+        Hooks: path.resolve(__dirname, "src/hooks/")
       }
     },
     devtool: 'source-map',

@@ -4,13 +4,9 @@ export type RouteType = {
     path: string
     name: string
     component: FunctionComponent
+    index?: boolean
 }
 
-export type ActionType = {
-    type: string,
-    payload?: object | string | number
-}
-
-export type categoryOptions = {
-    [key: string]: boolean
+export interface IHeaders {
+    [key: string]: string;
 }

@@ -1,0 +1,146 @@
+@use 'config/variables';
+@use 'config/mixins';
+
+.nft-search-container {
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+  position: relative
+}
+
+
+//NFT List and Card
+.NFT_Card {
+  position: relative;
+  padding: 18px 25px;
+  margin-bottom: 25px;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 300px;
+  border-radius: variables.$rounded;
+  @include mixins.hover-effect;
+
+  .NFT_Card_ActionArea {
+    border-radius: variables.$rounded;
+  }
+}
+
+.NFT_Box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.NFT_Image {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-radius: variables.$rounded;
+}
+
+.NFT_List {
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+//NFT Detail Page
+.NFT_Detail_Wrapper {
+  padding-bottom: 120px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.NFT_Detail_Column {
+  @include mixins.text-align-center
+}
+
+.NFT_Detail_InfoBox {
+  @include mixins.info-box
+}
+
+.NFT_Detail_Image {
+  max-width: 100%;
+  max-height: 600px;
+  border-radius: variables.$rounded;
+  margin-bottom: 30px !important;
+  vertical-align: middle;
+}
+
+.NFT_Detail_Traits {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  @include mixins.feint-border-bottom
+}
+
+.NFT_Detail_Info {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  @include mixins.feint-border-bottom
+}
+
+.NFT_Detail_Info_Icon {
+  width: 24px;
+  height: 24px;
+}
+
+.NFT_Detail_NotVerified {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  background: #fce100;
+  color: #000;
+  padding: 5px 20px;
+  border-radius: 20px;
+  width: 100%;
+  margin: 0 auto 20px auto;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.NFT_Detail_Action_Buttons {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.NFT_Detail_LikesViews {
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.NFT_Detail_Like_Box {
+  margin-left: 15px;
+  font-weight: 600;
+  padding: 5px 10px;
+  font-size: 16px;
+  text-align: center;
+  min-width: 80px;
+  border-radius: 50px;
+  background-color: #f4f7fc;
+  color: #727272;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.NFT_Detail_Creator {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}

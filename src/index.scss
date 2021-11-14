@@ -1,3 +1,12 @@
+@use "./styles/config/mixins";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&family=Roboto+Condensed:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,14 +32,25 @@ body {
   align-items: stretch;
   width: 100%;
   flex-grow: 1;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  min-height: 80vh;
 }
 
 #content {
   width: 100%;
   height: 100%;
   padding: 0;
+  margin-top: 48px;
+}
+
+.footer {
+  padding: 80px 0 0 0;
+}
+
+.Align_Center {
+  @include mixins.align-center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 /* SCROLLBAR */
