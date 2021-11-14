@@ -80,7 +80,7 @@ const NFTDetailPage: FunctionComponent<any> = (props) => {
                             >
                                 <Grid container direction="row" spacing={1} className="NFT_Detail_Traits">
                                     {NFT.Properties.attributes.map((attribute: INFTPropertyAttributes, i: number) => (
-                                        <Grid item>
+                                        <Grid item key={"trait" + i}>
                                             <Chip label={chipLabel(attribute)} color="info" key={i}/>
                                         </Grid>
                                     ))}
@@ -116,7 +116,7 @@ const NFTDetailPage: FunctionComponent<any> = (props) => {
                                     <Grid container direction="row" spacing={1} className="NFT_Detail_Traits">
 
                                         {NFT.tags.map((tag: string, i: number) => (
-                                            <Grid item>
+                                            <Grid item key={"tag" + i}>
                                                 <Chip label={<b>{tag}</b>} color="primary" key={i}/>
                                             </Grid>
                                         ))}
@@ -179,10 +179,10 @@ const NFTDetailPage: FunctionComponent<any> = (props) => {
                                 style={cardStyleOverride}
                             >
                                 <div className="NFT_Detail_Info">
-                                    <Typography variant="h5"><b>Listed by:</b> <a href={`https://explorer.solana.com/address/${NFT.sellerKey}`}>{NFT.sellerKey}</a></Typography>
+                                    <Typography variant="h6"><b>Listed by:</b> <a href={`https://explorer.solana.com/address/${NFT.sellerKey}`}>{NFT.sellerKey}</a></Typography>
                                 </div>
                                 <div className="NFT_Detail_Info">
-                                    <Typography variant="h4">{priceLabel(NFT.price)}</Typography>
+                                    {priceLabel(NFT.price)}
                                 </div>
                                 <Typography variant="h6" marginBottom="10px">Creator royalties on secondary sales: <b>20%</b></Typography>
                                 <Button
